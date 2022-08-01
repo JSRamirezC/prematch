@@ -12,11 +12,17 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './services/http-client.service';
+import { MenuComponent } from './components/menu/menu.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

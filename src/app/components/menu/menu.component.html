@@ -1,0 +1,27 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+    <mat-toolbar class="example-toolbar d-flex justify-content-between">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>compare_arrows</mat-icon>
+      </button>
+      <div style="">
+ 
+      </div>
+      <div> <a class="btn btn-outline-light btn-floating m-1" routerLink="" role="button" style="border: 0;">
+          <mat-icon>exit_to_app</mat-icon>
+  
+        </a></div>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav class="align-items-center" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">{{nav.name}}</a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

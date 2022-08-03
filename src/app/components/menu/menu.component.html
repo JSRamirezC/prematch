@@ -1,5 +1,8 @@
 <div style="height: 100%" class="d-flex justify-content-around align-items-center">
     <div style="border: black solid; height: 90%;width: 20%;">   
+    <div class="d-flex justify-content-around align-items-center" *ngFor="let categorie of categories; let i = index">
+        <button style="background-color: transparent; border:0px; margin:5px">{{categorie.description}}</button>
+    </div>
     </div>   
     <div style="border: black solid; height: 90%;width: 75%;">
         <router-outlet></router-outlet>   

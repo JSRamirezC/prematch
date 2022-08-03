@@ -1,6 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -17,9 +18,11 @@ export class MenuComponent  implements OnDestroy, AfterViewInit{
     {name:"listar",route: "listar",icon: "home"},
   ]
 
+
+  
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private _router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -34,5 +37,9 @@ export class MenuComponent  implements OnDestroy, AfterViewInit{
   }
 
   shouldRun = true;
+
+  irALogin() {
+    this._router.navigate(['/login']) 
+  }
 
 }

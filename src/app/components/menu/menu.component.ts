@@ -34,6 +34,11 @@ export class MenuComponent  implements OnInit{
 
   ngOnInit(): void {
    
+      this._categoriesService.getPaso1().toPromise()        
+      .then((objects) => {
+        this.categories=objects;
+      });
+
       let categoryDto:CategoryDto= new CategoryDto();
       categoryDto.description="SPORT";
       categoryDto.id=1+"";

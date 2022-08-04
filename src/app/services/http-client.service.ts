@@ -15,6 +15,14 @@ export class HttpClientService {
   private agregarHeadersGenericos() {
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
+
+    headers =headers.append("Access-Control-Allow-Origin", "*")
+    headers =headers.append("Accept", "*/*")
+
+  
+    headers =headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    headers =headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
+   
     //if (sessionStorage.getItem('token')) { headers = headers.append('token', sessionStorage.getItem('token')) }
     return { headers: headers, observe: 'response' as 'body' };
   }
@@ -29,7 +37,7 @@ export class HttpClientService {
   private agregarHeadersInternos() {
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
-    if (sessionStorage.getItem('token')) { headers = headers.append('token', sessionStorage.getItem('token') || "[]") }
+  
     return { headers: headers, observe: 'response' as 'body' };
   }
 

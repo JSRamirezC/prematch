@@ -11,10 +11,10 @@ export class CategoriesService {
 
   constructor(private httpClient: HttpClientService) { }
 
-  getTypes () {
+  getPaso1 () {
     return this.httpClient
       .get(
-        'https://event-module.dev.crux-games.com/event-module/categories/types'
+        'http://event-module.dev.crux-games.com/event-module/categories/types'
       )
       .pipe(map((response: HttpResponse<any>) => {
         if (response.status == 200) {
@@ -31,7 +31,7 @@ export class CategoriesService {
   getDescription (parentId,typeId) {
     return this.httpClient
       .get(
-        'https://event-module.dev.crux-games.com/event-module/categories?parentId='+parentId+'&typeId='+typeId
+        'http://event-module.dev.crux-games.com/event-module/categories?parentId='+parentId+'&typeId='+typeId
       )
       .pipe(map((response: HttpResponse<any>) => {
         if (response.status == 200) {

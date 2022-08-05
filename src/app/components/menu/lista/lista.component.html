@@ -1,9 +1,9 @@
 <div style="height: 100%" class="d-flex justify-content-around align-items-center row">
     <div class="d-flex justify-content-around align-items-center"
-    style=" padding: 0px !important;margin-bottom: 25px;margin-left: 10px;margin-right: 10px;margin-top: 25px; width: 20%; border: black solid"
+    style=" overflow-y: auto;overflow-x: auto; padding: 0px !important;margin-bottom: 25px;margin-left: 10px;margin-right: 10px;margin-top: 25px; width: 20%; border: black solid"
     *ngFor="let evento of eventos; let i = index">
-    {{evento.home}} - {{evento.away}}
+    {{evento.description}}
     <br/>
-        {{evento.fecha}}
+        {{evento.id}}
     </div>
 </div>

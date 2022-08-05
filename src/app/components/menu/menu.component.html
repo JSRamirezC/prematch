@@ -1,13 +1,13 @@
 <div style="height: 100%" class="d-flex justify-content-around align-items-center">
-    <div style="border: black solid; height: 90%;width: 20%;">   
+    <div style="border: black solid; height: 90%;width: 20%;  overflow-y: auto;overflow-x: auto;">   
     <div class="" *ngFor="let categorie of categories; let i = index">
-        <button style="background-color: transparent; border:0px; margin:5px " (click)="changePaso1(categorie.id)" >{{categorie.description}}</button>
+        <button style="background-color: transparent; border:0px; margin:5px " (click)="changePaso1(categorie.id)" >>{{categorie.description}}</button>
         <div *ngIf="categorie.id==paso1">
             <div class="" *ngFor="let categorie2 of categories2; let i = index">
-            <button style="background-color: transparent; border:0px; margin:5px; margin-left: 20px; " (click)="changePaso2(categorie2.id)" >{{categorie2.description}}</button>   
+            <button style="background-color: transparent; border:0px; margin:5px; margin-left: 20px; " (click)="changePaso2(categorie2.id)" >->{{categorie2.description}}</button>   
             <div *ngIf="categorie2.id==paso2">
                 <div class="" *ngFor="let categorie3 of categories3; let i = index">
-                <button style="background-color: transparent; border:0px; margin:5px; margin-left: 35px; "  >{{categorie3.description}}</button>   
+                <button style="background-color: transparent; border:0px; margin:5px; margin-left: 35px; " (click)="changePaso3(categorie3.id)"  >{{categorie3.description}}</button>   
                 </div>
             </div>
 
@@ -23,9 +23,4 @@
             <router-outlet></router-outlet>   
         </div>
     </div>   
-</div>
-
-<div class="d-flex justify-content-around align-items-center" *ngFor="let categorie of categories; let i = index">
-    <button style="background-color: transparent; border:0px; margin:5px">{{categorie.description}}</button>
-    
 </div>

@@ -1,6 +1,11 @@
+import { CompetitorsDto } from "./competitors.dto";
+
 export class EventoDto {
-  id;
-  home: string;
-  away: string;
-  fecha: string;
+  categories: any= [];
+  competitors:Array<CompetitorsDto>= [];
+  description: string;
+  id: string;
+  markets: any= [];
+  provider: string;
+  type: string;
 }

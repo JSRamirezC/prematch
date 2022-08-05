@@ -11,7 +11,7 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'listar',
+        path: 'listar/:categoryId',
         component: ListaComponent,
         pathMatch: 'full'
     },

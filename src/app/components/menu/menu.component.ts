@@ -39,67 +39,34 @@ export class MenuComponent  implements OnInit{
         this.categories=objects;
       });
 
-      let categoryDto:CategoryDto= new CategoryDto();
-      categoryDto.description="SPORT";
-      categoryDto.id=1+"";
-      this.categories.push(categoryDto);
-   
-      let categoryDto2:CategoryDto= new CategoryDto();
-      categoryDto2.description="LEAGUE";
-      categoryDto2.id=2+"";
-      this.categories.push(categoryDto2);
-
-      let categoryDto3:CategoryDto= new CategoryDto();
-      categoryDto3.description="TOURNAMENT";
-      categoryDto3.id=3+"";
-      this.categories.push(categoryDto3);
-
-      let categoryDto4:CategoryDto= new CategoryDto();
-      categoryDto4.description="SEASON";
-      categoryDto4.id=4+"";
-      this.categories.push(categoryDto4);
-
   }
 
   changePaso1(number){
-
     this.categories2 = []; 
     this.paso1=number+"";
-    let categoryDto:CategoryDto= new CategoryDto();
-    categoryDto.description="SPORT";
-    categoryDto.id=1+"";
-    for (let i = 0; i < 5; i++) {
-      let category2Dto:Category2Dto= new Category2Dto();
-      category2Dto.description="League-"+(i+1);
-      category2Dto.id=i+"";
-      category2Dto.type=categoryDto;
-      this.categories2.push(category2Dto);
-    }
-    console.log(this.paso1);
+    this.paso2="";
+    this.paso3="";
+    this._categoriesService.getPaso2(this.paso1).toPromise()        
+    .then((objects) => {
+      this.categories2=objects;
+    });
   }
 
   changePaso2(number){
     this.categories3 = []; 
     this.paso2=number+"";
-    let categoryDto:CategoryDto= new CategoryDto();
-    categoryDto.description="SPORT";
-    categoryDto.id=1+"";
-    for (let i = 0; i < 3; i++) {
-      let category2Dto:Category2Dto= new Category2Dto();
-      category2Dto.description="Tournament-"+(i+1);
-      category2Dto.id=i+"";
-      category2Dto.type=categoryDto;
-      this.categories3.push(category2Dto);
-    }
-    console.log(this.paso1);
+    this.paso3="";
+    this._categoriesService.getPaso3(this.paso1,this.paso2).toPromise()        
+    .then((objects) => {
+      this.categories3=objects;
+    });
+
   }
 
   changePaso3(number){ 
-
+    this._router.navigate(['Menu/listar/'+(number+'')]);
   }
 
-  irALogin() {
-    this._router.navigate(['/login']) 
-  }
+
 
 }

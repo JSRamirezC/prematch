@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EventoDto } from 'src/app/class/evento.dto';
+import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
   selector: 'app-lista',
@@ -9,17 +11,18 @@ import { EventoDto } from 'src/app/class/evento.dto';
 export class ListaComponent implements OnInit {
 
   eventos :Array<EventoDto> = []; 
+  categoryId;
 
-  constructor() { }
+
+  constructor(private route: ActivatedRoute, private _categoriesService: CategoriesService) {
+    this.route.params.subscribe(res => this.categoryId = (res.categoryId));
+   }
 
   ngOnInit(): void {
-    for (let i = 0; i < 7; i++) {
-      let eventoDto:EventoDto= new EventoDto();
-      eventoDto.away="away"+i;
-      eventoDto.home="home"+i;
-      eventoDto.fecha="26-06-2015 12:00AM"
-      this.eventos.push(eventoDto);
-    }
+    this._categoriesService.getPaso4(this.categoryId).toPromise()        
+    .then((objects) => {
+      this.eventos=objects;
+    });
 
   }
 

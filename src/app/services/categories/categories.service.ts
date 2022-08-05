@@ -87,4 +87,26 @@ export class CategoriesService {
   }
 
 
+  getPaso5 (evento) {
+    //quitar mock 
+    evento="2835"
+    //fin mock 
+    return this.httpClient
+      .get(
+        'https://event-module.dev.crux-games.com/event-module/internal/events/'+evento
+      )
+      .pipe(map((response: HttpResponse<any>) => {
+        if (response.status == 200) {
+          return response.body;
+        } else if (response.status == 206) {
+          return [];
+        } else {
+
+          return [];
+        }
+      }));
+  }
+
+
+
 }

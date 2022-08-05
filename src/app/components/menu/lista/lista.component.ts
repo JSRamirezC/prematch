@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventoDto } from 'src/app/class/evento.dto';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
@@ -14,7 +14,7 @@ export class ListaComponent implements OnInit {
   categoryId;
 
 
-  constructor(private route: ActivatedRoute, private _categoriesService: CategoriesService) {
+  constructor(private route: ActivatedRoute,private _router: Router, private _categoriesService: CategoriesService) {
     this.route.params.subscribe(res => this.categoryId = (res.categoryId));
    }
 
@@ -24,6 +24,10 @@ export class ListaComponent implements OnInit {
       this.eventos=objects;
     });
 
+  }
+
+  detalle(number){ 
+    this._router.navigate(['Menu/detalle/'+(number.id+'')]);
   }
 
 }

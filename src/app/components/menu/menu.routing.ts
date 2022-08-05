@@ -16,7 +16,7 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'detalle',
+        path: 'detalle/:detalleId',
         component: DetalleComponent,
         pathMatch: 'full'
     }

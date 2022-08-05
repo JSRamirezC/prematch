@@ -21,8 +21,8 @@ export class MenuComponent  implements OnInit{
   title1="";
   title2="";
   title3="";
-  title4="";
-  title="";
+;
+ 
 
   categories :Array<CategoryDto> = []; 
   categories2 :Array<Category2Dto> = []; 
@@ -43,9 +43,12 @@ export class MenuComponent  implements OnInit{
 
   changePaso1(number){
     this.categories2 = []; 
-    this.paso1=number+"";
+    this.paso1=number.id+"";
     this.paso2="";
     this.paso3="";
+    this.title1=number.description+"";
+    this.title2="";
+    this.title3="";
     this._categoriesService.getPaso2(this.paso1).toPromise()        
     .then((objects) => {
       this.categories2=objects;
@@ -54,8 +57,10 @@ export class MenuComponent  implements OnInit{
 
   changePaso2(number){
     this.categories3 = []; 
-    this.paso2=number+"";
+    this.paso2=number.id+"";
     this.paso3="";
+    this.title2=number.description+"";
+    this.title3="";
     this._categoriesService.getPaso3(this.paso1,this.paso2).toPromise()        
     .then((objects) => {
       this.categories3=objects;
@@ -64,7 +69,8 @@ export class MenuComponent  implements OnInit{
   }
 
   changePaso3(number){ 
-    this._router.navigate(['Menu/listar/'+(number+'')]);
+    this.title3=number.description+"";
+    this._router.navigate(['Menu/listar/'+(number.id+'')]);
   }
 
 

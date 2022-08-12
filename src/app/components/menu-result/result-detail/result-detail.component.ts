@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EventoDetailDto } from 'src/app/class/eventoDetail.dto';
+import { ResultService } from 'src/app/services/results/result.service';
 
 @Component({
   selector: 'app-result-detail',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultDetailComponent implements OnInit {
 
-  constructor() { }
+  eventosDetail :EventoDetailDto; 
+  detalleId;
+
+  constructor(private route: ActivatedRoute,private _resultService: ResultService) {
+    this.route.params.subscribe(res => this.detalleId = (res.detalleId));
+   }
 
   ngOnInit(): void {
   }

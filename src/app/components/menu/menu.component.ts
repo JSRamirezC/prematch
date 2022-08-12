@@ -21,8 +21,6 @@ export class MenuComponent  implements OnInit{
   title1="";
   title2="";
   title3="";
-;
- 
 
   categories :Array<CategoryDto> = []; 
   categories2 :Array<Category2Dto> = []; 

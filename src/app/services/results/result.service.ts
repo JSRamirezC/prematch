@@ -66,4 +66,44 @@ export class ResultService {
       }));
   }
 
+  getPaso4 (categoryID,date) {
+    //quitar mock 
+    categoryID = "357"
+    date="20220730"
+    //fin mock 
+    return this.httpClient
+      .get(
+        'http://event-module.dev.crux-games.com/event-module/internal/events/result?categoryId='+categoryID+'&date='+date
+      )
+      .pipe(map((response: HttpResponse<any>) => {
+        if (response.status == 200) {
+          return response.body;
+        } else if (response.status == 206) {
+          return [];
+        } else {
+
+          return [];
+        }
+      }));
+  }
+
+  getPaso5 (evento) {
+    //quitar mock 
+    evento="2835"
+    //fin mock 
+    return this.httpClient
+      .get(
+        'https://event-module.dev.crux-games.com/event-module/internal/events/'+evento
+      )
+      .pipe(map((response: HttpResponse<any>) => {
+        if (response.status == 200) {
+          return response.body;
+        } else if (response.status == 206) {
+          return [];
+        } else {
+
+          return [];
+        }
+      }));
+  }
 }

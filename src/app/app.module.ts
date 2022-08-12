@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './services/http-client.service';
 import { MenuComponent } from './components/menu/menu.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomePrincipalComponent } from './components/home-principal/home-principal.component';
+import { MenuResultComponent } from './components/menu-result/menu-result.component';
 
 
 
@@ -22,7 +24,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   declarations: [
     AppComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomePrincipalComponent,
+
+    MenuResultComponent
   ],
   imports: [
     BrowserModule,

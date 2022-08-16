@@ -13,6 +13,7 @@ export class ResultComponent implements OnInit {
   resultados :Array<EventoDetailDto> = []; 
   categoryId;
   dateDay = new Date();
+  dateDay2 = new Date();
   dateString = '';
 
   constructor(private route: ActivatedRoute,private _resultService: ResultService) {
@@ -25,6 +26,10 @@ export class ResultComponent implements OnInit {
     this._resultService.getPaso4(this.categoryId,this.dateString).toPromise()        
     .then((object) => {
       this.resultados=object;
+      this.resultados.forEach(function (value) {
+        let dateString =value.startTime.replace(':00Z[UTC]','');
+        value.startTimeD=new Date(dateString);
+      });
     });
   }
 

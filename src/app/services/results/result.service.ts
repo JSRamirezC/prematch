@@ -68,7 +68,7 @@ export class ResultService {
 
   getPaso4 (categoryID,date) {
     //quitar mock 
-    categoryID = "357"
+    categoryID = "1587"
     date="20220730"
     //fin mock 
     return this.httpClient

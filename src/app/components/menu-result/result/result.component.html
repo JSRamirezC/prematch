@@ -11,7 +11,9 @@
 
     <button class="d-flex justify-content-around align-items-center"
         style=" overflow-y: auto; overflow-x: auto; padding: 0px !important;margin-bottom: 25px;margin-left: 10px;margin-right: 10px;margin-top: 25px; width: 80%; border: black solid"
-        *ngFor="let resultado of resultados; let i = index">
+        *ngFor="let resultado of resultados; let i = index"
+        (click)="detalle(resultado)"
+        >
         <div class="d-flex justify-content-around align-items-center" style=" height: 100%;width: 100%;">
             <div> {{resultado.startTimeD | date:'shortTime' }} </div>
             <div>{{resultado.description}} </div>

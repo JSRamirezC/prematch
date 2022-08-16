@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { EventoDetailDto } from 'src/app/class/eventoDetail.dto';
 import { ResultService } from 'src/app/services/results/result.service';
@@ -18,7 +18,7 @@ export class ResultComponent implements OnInit {
   dateDay = new Date();
   dateString = '';
   fechaNacimiento: NgbDateStruct = null;
-  constructor(private route: ActivatedRoute, private _resultService: ResultService, private dateAdapter: NgbDateStringAdapter,) {
+  constructor(private route: ActivatedRoute,private _router: Router, private _resultService: ResultService, private dateAdapter: NgbDateStringAdapter,) {
     this.route.params.subscribe(res => this.categoryId = (res.categoryId));
   }
 
@@ -70,5 +70,10 @@ export class ResultComponent implements OnInit {
     year=y+'';
     return year+month+day;
   }
+
+  detalle(number){ 
+    this._router.navigate(['MenuResult/resdetalle/'+(number.id+'')]);
+  }
+
 
 }

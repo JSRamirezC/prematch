@@ -16,7 +16,6 @@ export class ResultComponent implements OnInit {
   resultados: Array<EventoDetailDto> = [];
   categoryId;
   dateDay = new Date();
-  dateDay2 = new Date();
   dateString = '';
   fechaNacimiento: NgbDateStruct = null;
   constructor(private route: ActivatedRoute, private _resultService: ResultService, private dateAdapter: NgbDateStringAdapter,) {
@@ -24,6 +23,7 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.dateString =this.getStringDate (  this.dateDay.getDate() , this.dateDay.getMonth() ,this.dateDay.getFullYear())
     console.log(this.dateString)
     this._resultService.getPaso4(this.categoryId, this.dateString).toPromise()

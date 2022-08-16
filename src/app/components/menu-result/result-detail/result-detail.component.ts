@@ -18,6 +18,11 @@ export class ResultDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this._resultService.getPaso5(this.detalleId).toPromise()
+    .then((object) => {
+      this.eventosDetail = object;
+      this.eventosDetail.markets[0].selections[0].result='Winner';
+    });
   }
 
 }

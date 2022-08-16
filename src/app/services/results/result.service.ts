@@ -89,7 +89,7 @@ export class ResultService {
 
   getPaso5 (evento) {
     //quitar mock 
-    evento="2835"
+    evento="8554"
     //fin mock 
     return this.httpClient
       .get(

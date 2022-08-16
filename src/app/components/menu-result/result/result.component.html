@@ -1,10 +1,19 @@
-<div style="height: 100%" class="d-flex justify-content-around align-items-center row" style="overflow-y: auto;    height: 100%;">
+<div style="padding: 10px;">
+    <input type="text" class="input1" placeholder="yyyy-mm-dd" name="fechNac" id="birthDateCtrl" required
+        aria-label="Fecha de nacimiento" aria-describedby="btn-addon-birthdate" tabindex="-1" onkeydown="return false"
+        ngbDatepicker #d2="ngbDatepicker" [(ngModel)]="fechaNacimiento" #birthdate="ngModel"
+        (ngModelChange)="onChangeFechaNacimiento($event)" (click)="d2.toggle()">
+</div>
+<div style="height: 100%" class="d-flex justify-content-around align-items-center row"
+    style="overflow-y: auto;    height: 100%;">
 
     <button class="d-flex justify-content-around align-items-center"
         style=" overflow-y: auto; overflow-x: auto; padding: 0px !important;margin-bottom: 25px;margin-left: 10px;margin-right: 10px;margin-top: 25px; width: 80%; border: black solid"
         *ngFor="let resultado of resultados; let i = index">
         <div class="d-flex justify-content-around align-items-center" style=" height: 100%;width: 100%;">
-            <div> {{resultado.startTimeD | date:'shortTime'   }} </div> <div>{{resultado.description}}   </div><div> {{resultado.score}}</div>
+            <div> {{resultado.startTimeD | date:'shortTime' }} </div>
+            <div>{{resultado.description}} </div>
+            <div> {{resultado.score}}</div>
         </div>
     </button>
 </div>

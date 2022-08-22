@@ -74,6 +74,4 @@ export class ResultComponent implements OnInit {
   detalle(number){ 
     this._router.navigate(['MenuResult/resdetalle/'+(number.id+'')]);
   }
-
-
 }

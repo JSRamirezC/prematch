@@ -16,9 +16,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomePrincipalComponent } from './components/home-principal/home-principal.component';
 import { MenuResultComponent } from './components/menu-result/menu-result.component';
-
-
-
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +24,8 @@ import { MenuResultComponent } from './components/menu-result/menu-result.compon
     MenuComponent,
     PageNotFoundComponent,
     HomePrincipalComponent,
-
-    MenuResultComponent
+    MenuResultComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

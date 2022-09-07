@@ -1,0 +1,15 @@
+<div style="height: 85%;  overflow-y: auto;overflow-x: auto; width: 99%;" class="d-flex justify-content-around align-items-center row">
+    <div class="d-flex justify-content-around align-items-center"
+    style=" padding: 0px !important;margin-bottom: 25px;margin-left: 10px;margin-right: 10px;margin-top: 25px; width: 20%; border: black solid"
+    *ngFor="let evento of eventos; let i = index">
+    <button style="padding: 15px;" (click)="detalle(evento)"  > 
+    {{evento.description}}
+
+    </button>     
+    </div>
+</div>
+<div style="height: 15%; align-items: center;"class="d-flex justify-content-around align-items-center">
+    <button style="margin: 15px;"  >
+        Nueva Evento
+    </button>
+</div>

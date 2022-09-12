@@ -30,8 +30,8 @@ export class ListEventsComponent implements OnInit {
     this._router.navigate(['Admin/eventsEdit/'+(number.id+'')]);
   }
 
-  newEvento(number){ 
-    this._router.navigate(['Menu/detalle/'+(number.id+'')]);
+  newEvento(){ 
+    this._router.navigate(['Admin/newEvents/'+('0')]);
   }
 
 }

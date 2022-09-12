@@ -68,4 +68,8 @@ export class AdminComponent implements OnInit {
     this._router.navigate(['Admin/listEventsEdit/'+(number.id+'')]);
   }
 
+  newCategory(){ 
+    this._router.navigate(['Admin/newCategory/'+(+'')]);
+  }
+
 }

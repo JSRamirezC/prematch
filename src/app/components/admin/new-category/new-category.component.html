@@ -18,9 +18,33 @@
 
     </div>
     <div style="height: 15%; align-items: center;"class="d-flex justify-content-around align-items-center">
-        <button style="margin: 15px;"  >
+        <button style="margin: 15px;" (click)="openVerticallyCentered(content)" >
             Crear Categoria
         </button>
     </div>
 
 </div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header row" style="margin-left: 0px;margin-right: 0px;">
+        <div>
+            <img style="  height: 25px;margin:10px;" src="assets/ico_alerta_azul.png" alt="icon!">
+        </div>
+        <div class="d-flex justify-content-around align-items-center">
+            <h4 class="modal-title">Felicitaciones!</h4>
+        </div>
+        <button style="margin-left: 0px;margin-right: 0px;" type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div fxLayout="row" fxLayoutAlign="space-evenly center" style="border-radius:25px ; background:#cfdde2 ;">
+
+            <div id="divMessagePError" fxLayout="column" fxLayoutAlign="center center">
+                <h3 id="h3MessagePError" style="margin:10px" class="phoneSeller">Categoria creada</h3>
+            </div>
+        </div>
+    </div>
+
+</ng-template>
